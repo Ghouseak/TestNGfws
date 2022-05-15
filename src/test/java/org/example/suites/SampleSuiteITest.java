@@ -1,7 +1,9 @@
 package org.example.suites;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SampleSuiteITest {
@@ -13,6 +15,9 @@ public class SampleSuiteITest {
     WebDriver driver=new ChromeDriver();
     driver.get("https://www.google.com/");
     System.out.println("Test passed");
+    boolean ele = driver.findElement(By.className("lnXdpd")).isDisplayed();
+    Assert.assertEquals(ele,true);
+    driver.quit();
   }
 
 }
